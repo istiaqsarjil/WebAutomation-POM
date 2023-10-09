@@ -38,8 +38,6 @@ public class TestLogin extends DriverSetup {
 
         loginPage.clickOnElement(loginPage.logOutButton);
 
-
-
     }
 
 
