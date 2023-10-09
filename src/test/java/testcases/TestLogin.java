@@ -1,6 +1,7 @@
 package testcases;
 
 import org.testng.annotations.Test;
+import pages.HomePage;
 import pages.LoginPage;
 import pages.RegistrationPage;
 import utilities.DriverSetup;
@@ -21,6 +22,7 @@ public class TestLogin extends DriverSetup {
     public void testLoginProcess(){
 
        RegistrationPage registrationpage = new RegistrationPage();
+       HomePage homePage = new HomePage();
 
        /*String emailFromReg = testRegistration.getEmail();
        String passwordFromReg = testRegistration.getPassword();*/
@@ -31,8 +33,8 @@ public class TestLogin extends DriverSetup {
         loginPage.textInput(loginPage.inputPassword,registrationpage.password);
         loginPage.clickOnElement(loginPage.loginButton);
 
-        loginPage.assertAnything(getDriver().getCurrentUrl(), loginPage.afterLoginPage,"My account");
-        loginPage.assertAnything(getDriver().getCurrentUrl(),loginPage.logOutButton,"Log out");
+        loginPage.assertAnything(homePage.homePageURL, loginPage.afterLoginPage,"My account");
+        loginPage.assertAnything(homePage.homePageURL, loginPage.logOutButton,"Log out");
 
         loginPage.clickOnElement(loginPage.logOutButton);
 

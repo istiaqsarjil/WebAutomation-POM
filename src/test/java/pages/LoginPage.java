@@ -2,7 +2,7 @@ package pages;
 
 import org.openqa.selenium.By;
 
-public class LoginPage extends BasePage{
+public class LoginPage extends BasePage {
 
 
     public String loginPageURL = "https://demo.nopcommerce.com/login?returnUrl=%2F";
@@ -14,4 +14,5 @@ public class LoginPage extends BasePage{
     public By loginButton = By.xpath("//button[normalize-space()='Log in']");
     public By afterLoginPage = By.xpath("//a[@class='ico-account']");
     public By logOutButton = By.xpath("//a[normalize-space()='Log out']");
+
 }

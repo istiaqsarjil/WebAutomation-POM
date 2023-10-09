@@ -33,8 +33,8 @@ public class BasePage {
 
     public void assertAnything(String URL, By locator, String text){
 
-        Assert.assertEquals(getDriver().getCurrentUrl(),URL," Not Matched!!");
-        Assert.assertEquals(text,getElement(locator).getText()," Not Matched!!");
+        Assert.assertEquals(getDriver().getCurrentUrl(), URL," Not Matched!!");
+        Assert.assertEquals(getElement(locator).getText(), text," Not Matched!!");
     }
 
 }
