@@ -20,10 +20,15 @@ public class TestLogin extends DriverSetup {
    @Test
     public void testLoginProcess(){
 
+       RegistrationPage registrationpage = new RegistrationPage();
+
+       /*String emailFromReg = testRegistration.getEmail();
+       String passwordFromReg = testRegistration.getPassword();*/
+
         getDriver().get(loginPage.loginPageURL);
 
-        loginPage.textInput(loginPage.inputEmail,"abcd@efg.com");
-        loginPage.textInput(loginPage.inputPassword,"1234kkghh");
+        loginPage.textInput(loginPage.inputEmail,registrationpage.email);
+        loginPage.textInput(loginPage.inputPassword,registrationpage.password);
         loginPage.clickOnElement(loginPage.loginButton);
 
         loginPage.assertAnything(getDriver().getCurrentUrl(), loginPage.afterLoginPage,"My account");

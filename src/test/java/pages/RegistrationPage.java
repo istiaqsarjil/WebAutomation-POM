@@ -2,23 +2,15 @@ package pages;
 
 import org.openqa.selenium.By;
 import org.testng.annotations.Test;
-
 import java.util.stream.StreamSupport;
-
 import static utilities.DriverSetup.getDriver;
 
 public class RegistrationPage extends BasePage{
 
-    public String email1;
-    public String password1;
+    public String email = "tonu@asasd.com";
+    public String password = "1234ajsdgkaj";
 
-    public RegistrationPage(String email, String password) {
-        this.email1 = email;
-        this.password1 = password;
-    }
-    public RegistrationPage() {
 
-    }
 
     public String registerPageURL = "https://demo.nopcommerce.com/register?returnUrl=%2F";
     public String registerPageTitle = "nopCommerce demo store. Register";
@@ -36,13 +28,11 @@ public class RegistrationPage extends BasePage{
     public By inputPassword = By.xpath("//input[@id='Password']");
     public By inputConfirmPassword = By.xpath("//input[@id='ConfirmPassword']");
     public By registerButton = By.xpath("//button[@id='register-button']");
-
     public String registrationConfirmURL = "https://demo.nopcommerce.com/registerresult/1?returnUrl=/";
-
     public By registrationCompleteMsg = By.xpath("//div[@class='result']");
 
 
-    public void registrationTestProcesses(String email, String password){
+    public void registrationTestProcesses(){
 
          getDriver().get(registerPageURL);
          clickOnElement( genderMale);
@@ -58,9 +48,8 @@ public class RegistrationPage extends BasePage{
 
          clickOnElement( registerButton);
 
-         //new RegistrationPage(email,password);
 
-        //Assert.assertEquals(getDriver().getCurrentUrl(), registrationConfirmURL, " Not Matched!");
+         //Assert.assertEquals(getDriver().getCurrentUrl(), registrationConfirmURL, " Not Matched!");
 
          assertAnything( registrationConfirmURL,  registrationCompleteMsg, "Your registration completed");
     }

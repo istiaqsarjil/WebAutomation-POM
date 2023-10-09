@@ -14,11 +14,22 @@ public class TestRegistration extends DriverSetup {
 
     RegistrationPage registrationPage = new RegistrationPage();
 
+    /*private String email = "tonu@asasd.com";
+    private String password = "1234ajsdgkaj";
+
+    public String getEmail(){
+        return email;
+    }
+
+    public String getPassword(){
+        return password;
+    }*/
+
+
     @Test
     public void testUserRegistrationProcess(){
         getDriver().get(registrationPage.registerPageURL);
         registrationPage.clickOnElement(registrationPage.genderMale);
-
     }
 
     @Test
@@ -27,19 +38,21 @@ public class TestRegistration extends DriverSetup {
         Assert.assertTrue(registrationPage.isElementVisible(registrationPage.registerText),"Register Text Ashe nai!!");
     }
 
+
     @Test
     public void fillUpRegistration() throws InterruptedException {
 
-        String email = "abcd@efg.com";
-        String password= "1234kkghh";
+        /*String email = "abcd@efg.com";
+        String password= "1234kkghh";*/
 
-        RegistrationPage r1 = new RegistrationPage (email, password);
-        r1.registrationTestProcesses(email,password);
+
+        RegistrationPage r1 = new RegistrationPage ();
+        r1.registrationTestProcesses();
 
         /*TestLogin l1 = new TestLogin(email,password);*/
 
-        System.out.println(r1.email1);
-        System.out.println(r1.password1);
+        System.out.println(r1.email);
+        System.out.println(r1.password);
 
 
 
