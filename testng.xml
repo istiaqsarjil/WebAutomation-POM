@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <test verbose="2" preserve-order="true"
+          name="D:/SQA/Class 22-23 - ALL Java Works/Automation Starts with Selenium/WebAutomation-POM">
+        <classes>
+            <class name="testcases.TestHomePage">
+                <methods>
+                    <include name="testHomePageTitle"/>
+                    <include name="testRegistrationPageURL"/>
+                    <include name="testLoginPageURL"/>
+                </methods>
+            </class>
+            <class name="testcases.TestLogin">
+                <methods>
+                    <include name="testLoginProcess"/>
+                </methods>
+            </class>
+            <class name="testcases.TestRegistration">
+                <methods>
+                    <include name="testUserRegistrationProcess"/>
+                    <include name="testRegisterText"/>
+                    <include name="fillUpRegistration"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
